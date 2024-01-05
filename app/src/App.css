@@ -1,0 +1,86 @@
+body {
+    background: linear-gradient(320deg, #7e2d7e, #5800ff, #00c6ff);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+.body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    background: rgba(0, 0, 0, 0.30);
+    border-radius: 20px;
+    width: auto;
+    padding: 5px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    background: rgba(0, 0, 0, 0.30);
+    color: white;
+    width: auto;
+    height: auto;
+    margin: 10px;
+    border-radius: 16px;
+    font-size: 40px;
+}
+
+.num {
+    font-size: 2rem;
+    margin: 0.5rem;
+    border-radius: 16px;
+    background: aliceblue;
+    border: 1px;
+    height: 65px;
+    width: 65px;
+    transition: 0.2s;
+}
+
+.num:hover {
+    background: #00c6ff;
+    color: white;
+}
+
+.zer {
+    font-size: 2rem;
+    margin: 0.5rem;
+    border-radius: 16px;
+    width: 148px;
+    background: aliceblue;
+    border: 1px;
+    height: 65px;
+    transition: 0.2s;
+}
+
+.zer:hover {
+    background: #00c6ff;
+    color: white;
+}
+
+.operator {
+    font-size: 2rem;
+    margin: 0.5rem;
+    border: 1px;
+    border-radius: 16px;
+    height: 65px;
+    width: 65px;
+    background: #282c34;
+    color: white;
+    transition: 0.2s;
+}
+
+.operator:hover {
+    background: #00c6ff;
+    color: white;
+}
+
+h1 {
+    margin: 5px;
+}
