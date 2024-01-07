@@ -50,6 +50,10 @@ function App() {
         else {
             setScreen("0");
         }
+
+        if(screen === result.toString()) {
+            setScreen("0");
+        }
     }
 
   return (
