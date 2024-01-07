@@ -1,6 +1,5 @@
 # ReactCalculatorApp
 Made this while bored, but enjoy.
 
-If I want to, I can someday add:
-- Decimal numbers. The button for decimal (,) is already in the code, but i decided that I would keep it for later.
-- Calculating using a previously calculated number.
+Ill fix error messages stretching the calculator later.
+Deviding will also come later as I have to change the layout of the buttons to add it.
