@@ -75,37 +75,35 @@ function App() {
       <>
           <div className="body">
               <div className="screensection">
-                  <div className="screenpos">
-                      <h2 className="screen">{screen}</h2>
-                  </div>
-                  <div className="delpos">
-                      <button className="del" onClick={handleDelClick}>{'<'}</button>
-                  </div>
+                  <h2 className="screen">{screen}</h2>
+                  <button className="del" onClick={handleDelClick}>{'<'}</button>
               </div>
               <p className="error">{errormsg}</p>
-              <div className="section">
-                  <button className="num" onClick={() => handleButtonClick(1)}>1</button>
-                  <button className="num" onClick={() => handleButtonClick(2)}>2</button>
-                  <button className="num" onClick={() => handleButtonClick(3)}>3</button>
-                  <button className="operator" onClick={() => handleButtonClick("+")}>+</button>
-              </div>
-              <div className="section">
-                  <button className="num" onClick={() => handleButtonClick(4)}>4</button>
-                  <button className="num" onClick={() => handleButtonClick(5)}>5</button>
-                  <button className="num" onClick={() => handleButtonClick(6)}>6</button>
-                  <button className="operator" onClick={() => handleButtonClick("-")}>-</button>
-              </div>
-              <div className="section">
-                  <button className="num" onClick={() => handleButtonClick(7)}>7</button>
-                  <button className="num" onClick={() => handleButtonClick(8)}>8</button>
-                  <button className="num" onClick={() => handleButtonClick(9)}>9</button>
-                  <button className="operator" onClick={() => handleButtonClick("*")}>*</button>
-              </div>
-              <div className="zerosection">
-                  <button className="zer" onClick={() => handleButtonClick(0)}>0</button>
-                  <button className="num" onClick={() => handleButtonClick(".")}>,</button>
-                  {/*<button className="operator" onClick={() => handleCalcClick()}>/</button>*/}
-                  <button className="operator" onClick={() => handleCalcClick()}>=</button>
+              <div className="buttonBody">
+                  <div className="section">
+                      <button className="num" onClick={() => handleButtonClick(1)}>1</button>
+                      <button className="num" onClick={() => handleButtonClick(2)}>2</button>
+                      <button className="num" onClick={() => handleButtonClick(3)}>3</button>
+                      <button className="operator" onClick={() => handleButtonClick("+")}>+</button>
+                  </div>
+                  <div className="section">
+                      <button className="num" onClick={() => handleButtonClick(4)}>4</button>
+                      <button className="num" onClick={() => handleButtonClick(5)}>5</button>
+                      <button className="num" onClick={() => handleButtonClick(6)}>6</button>
+                      <button className="operator" onClick={() => handleButtonClick("-")}>-</button>
+                  </div>
+                  <div className="section">
+                      <button className="num" onClick={() => handleButtonClick(7)}>7</button>
+                      <button className="num" onClick={() => handleButtonClick(8)}>8</button>
+                      <button className="num" onClick={() => handleButtonClick(9)}>9</button>
+                      <button className="operator" onClick={() => handleButtonClick("*")}>*</button>
+                  </div>
+                  <div className="zerosection">
+                      <button className="zer" onClick={() => handleButtonClick(0)}>0</button>
+                      <button className="num" onClick={() => handleButtonClick(".")}>,</button>
+                      {/*<button className="operator" onClick={() => handleCalcClick()}>/</button>*/}
+                      <button className="operator" onClick={() => handleCalcClick()}>=</button>
+                  </div>
               </div>
           </div>
       </>

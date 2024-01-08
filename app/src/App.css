@@ -8,13 +8,15 @@ body {
 
 .body {
     display: flex;
-    align-items: center;
     flex-direction: column;
-    align-content: center;
+    align-items: center;
+    align-content: flex-start;
     background: rgba(0, 0, 0, 0.30);
     border-radius: 20px;
     width: auto;
     padding: 5px;
+    height: 500px;
+    max-height: 500px;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
 }
@@ -111,24 +113,13 @@ body {
 }
 
 .screensection {
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-}
-
-.screenpos {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 0;
-}
-
-.delpos {
-    flex-direction: row;
-    justify-content: flex-end;
-    margin: 0;
+    height: auto;
 }
 
 h1 {
@@ -151,4 +142,12 @@ h1 {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+}
+
+.buttonBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
 }
