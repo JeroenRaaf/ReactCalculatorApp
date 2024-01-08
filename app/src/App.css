@@ -15,8 +15,8 @@ body {
     border-radius: 20px;
     width: auto;
     padding: 5px;
-    height: 500px;
-    max-height: 500px;
+    height: 565px;
+    max-height: 565px;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
 }
@@ -91,6 +91,23 @@ body {
 }
 
 .operator:hover {
+    background: #00c6ff;
+    color: white;
+}
+
+.special {
+    font-size: 2rem;
+    margin: 0.5rem;
+    border: 1px;
+    border-radius: 16px;
+    height: 65px;
+    width: 65px;
+    background: #3b4557;
+    color: white;
+    transition: 0.2s;
+}
+
+.special:hover {
     background: #00c6ff;
     color: white;
 }

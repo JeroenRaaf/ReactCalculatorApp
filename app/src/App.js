@@ -4,11 +4,20 @@ import {useEffect, useState} from "react";
 function App() {
     const [screen, setScreen] = useState("")
     const [errormsg, setErrormsg] = useState("")
+    const [clear, setClear] = useState("AC")
     const [result, setResult] = useState(0)
 
     useEffect(() => {
         setScreen("0");
     }, []);
+
+    useEffect(() => {
+        if(screen === "0"){
+            setClear("AC")
+        } else{
+            setClear("C")
+        }
+    }, [screen])
 
     const handleButtonClick = (e) => {
         setErrormsg("");
@@ -22,13 +31,8 @@ function App() {
             error = true;
             setErrormsg("You can't use two operators in a row.");
         } else if(e === ".") {
-            const characterArray = screen.split("").map((char) => ({ char }));
-            let commaEncountered = false; //Geef signaal als char.char een komma is. Zet weer op false als er daarna een operator is gekomen.
-            let operatorEncountered = true; //Zet op true als er net een operator is geweest.
-            //CommaError is true als commaCgeck true is terwijl operatorEncountered false is.
-
-            const currentNumber = screen.split(/[\+\-\*]/).pop(); // Get the current number being entered
-            const commaCount = (currentNumber.match(/\./g) || []).length; // Count the commas in the current number
+            const currentNumber = screen.split(/[+\-*\/]/).pop();
+            const commaCount = (currentNumber.match(/\./g) || []).length;
 
             if (commaCount >= 1 && e === ".") {
                 error = true;
@@ -65,10 +69,24 @@ function App() {
         else {
             setScreen("0");
         }
+    }
 
-        if(screen === result.toString()) {
-            setScreen("0");
+    const handleClearClick = () => {
+        setScreen("0");
+        setResult(0);
+        setErrormsg("");
+    }
+
+    const handleSetNegativeClick = () => {
+        if(screen === "0"){
+            setScreen("-");
+        } else {
+            setScreen(screen + "-");
         }
+    }
+
+    const handlePercentClick = () => {
+        setScreen(eval(screen+"/100").toString());
     }
 
   return (
@@ -80,6 +98,12 @@ function App() {
               </div>
               <p className="error">{errormsg}</p>
               <div className="buttonBody">
+                  <div className="section">
+                      <button className="special" onClick={() => handleClearClick()}>{clear}</button>
+                      <button className="special" onClick={() => handleSetNegativeClick()}>+/-</button>
+                      <button className="special" onClick={() => handlePercentClick()}>%</button>
+                      <button className="operator" onClick={() => handleButtonClick("/")}>÷</button>
+                  </div>
                   <div className="section">
                       <button className="num" onClick={() => handleButtonClick(1)}>1</button>
                       <button className="num" onClick={() => handleButtonClick(2)}>2</button>
@@ -101,7 +125,6 @@ function App() {
                   <div className="zerosection">
                       <button className="zer" onClick={() => handleButtonClick(0)}>0</button>
                       <button className="num" onClick={() => handleButtonClick(".")}>,</button>
-                      {/*<button className="operator" onClick={() => handleCalcClick()}>/</button>*/}
                       <button className="operator" onClick={() => handleCalcClick()}>=</button>
                   </div>
               </div>
